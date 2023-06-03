@@ -10,6 +10,7 @@ const TipoProyecto = require('../models/tipoProyecto')
 const createProyecto= async (req = request, 
     res = response) => {
     try{
+        console.log("Peticion de creacion...")
         const data = req.body
         console.log(data)
         const { cliente, Etapas, univercidades, tipoProyecto } = data;
@@ -68,6 +69,7 @@ const createProyecto= async (req = request,
 const getProyecto = async (req = request, 
     res = response) => {
         try{
+            console.log("Peticion de consulta...")
             const proyectoDB = await Proyecto.find()
                 .populate({
                     path: 'cliente'
