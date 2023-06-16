@@ -7,17 +7,17 @@ pipeline {
                 git branch: 'main', credentialsId: 'git-jenkins', url: 'https://github.com/LuisDavidaspr2003/node-jenkins.git'
             }
         }
-        stage('Construir imagen de Docker'){
+         stage('Construir imagen de Docker'){
             steps {
                 script {
                     withCredentials([
                         string(credentialsId: 'MONGO_URI', variable: 'MONGO_URI')
                     ]) {
-                        docker.build('proyecto-mini:v1', '--build-arg MONGO_URI=${MONGO_URI} .')
+                        docker.build('proyecto-mini:v1 ', '--build-arg MONGO_URI=${MONGO_URI} .')
                     }
                 }
             }
-        }    
+        }   
         stage('Desplegar contenedores Docker'){
             steps {
                 script {
