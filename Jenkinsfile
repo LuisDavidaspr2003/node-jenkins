@@ -13,11 +13,12 @@ pipeline {
                     withCredentials([
                         string(credentialsId: 'MONGO_URI', variable: 'MONGO_URI')
                     ]) {
-                        docker.build('proyecto-mini:v1 ', '--build-arg MONGO_URI=${MONGO_URI} .')
+                        docker.build('proyecto-mini:v1', '--build-arg MONGO_URI=${MONGO_URI} .')
                     }
                 }
             }
-        }  stage('Desplegar contenedores Docker'){
+        }    
+        stage('Desplegar contenedores Docker'){
             steps {
                 script {
                     withCredentials([
