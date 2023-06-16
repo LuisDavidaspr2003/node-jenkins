@@ -2,7 +2,7 @@ version: "3.7"
 services:
   proyecto-mini:   
     container_name: proyecto-mini  
-    image: proyecto-mini:lates
+    image: proyecto-mini:v1 
     build:
       context: .
     ports:
