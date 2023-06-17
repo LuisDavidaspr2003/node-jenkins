@@ -17,7 +17,8 @@ pipeline {
                     }
                 }
             }
-        }         stage('Desplegar contenedores Docker'){
+        }        
+        stage('Desplegar contenedores Docker'){
             steps {
                 script {
                     withCredentials([
