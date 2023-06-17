@@ -9,7 +9,7 @@ services:
       - "4002"
     environment:
       - MONGO_URI=${MONGO_URI}
-      - PORT="4002"
+      - PORT=4002
     networks:
       - proyectoweb-app
 
